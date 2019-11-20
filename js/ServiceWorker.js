@@ -4,9 +4,23 @@ var appFiles = [
     '/js/DecoderWorker.js',
     '/js/exif.js',
     '/js/job.js',
-    '/js/ServiceWorker.js',
+    '/index.html',
     '/produit.csv',
     '/style.css'
+    '/icones/icon-32.png',
+    '/icones/icon-64.png',
+    '/icones/icon-96.png',
+    '/icones/icon-128.png',
+    '/icones/icon-168.png',
+    '/icones/icon-180.png',
+    '/icones/icon-192.png',
+    '/icones/icon-256.png',
+    '/icones/icon-512.png',
+    '/images/barcode-scanner.png',
+    '/images/icon-cart.png',
+    '/images/icon-setup.png',
+    '/images/icon-transmit.png',
+    '/images/logo.png'
 ];
 
 if('serviceWorker' in navigator) {
@@ -34,6 +48,18 @@ self.addEventListener('fetch', (e) => {
           return response;
         });
       });
+    })
+  );
+});
+
+self.addEventListener('activate', (e) => {
+  e.waitUntil(
+    caches.keys().then((keyList) => {
+          return Promise.all(keyList.map((key) => {
+        if(cacheName.indexOf(key) === -1) {
+          return caches.delete(key);
+        }
+      }));
     })
   );
 });
