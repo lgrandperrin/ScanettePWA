@@ -6,7 +6,7 @@ var appFiles = [
     '/js/job.js',
     '/index.html',
     '/produit.csv',
-    '/style.css'
+    '/style.css',
     '/icones/icon-32.png',
     '/icones/icon-64.png',
     '/icones/icon-96.png',
