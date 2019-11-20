@@ -32,7 +32,7 @@
     <script>
         if('serviceWorker' in navigator) {
             window.addEventListener('load', function(){
-                navigator.serviceWorker.register('./js/ServiceWorker.js').then(function(req){
+                navigator.serviceWorker.register('./ServiceWorker.js').then(function(req){
                     console.log("[Service Worker] Registration successful");
                 }, function(err){console.log("[Service Worker] Error in registration", err);})
             });
